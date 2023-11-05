@@ -1,0 +1,35 @@
+.item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* flex-direction: column; */
+}
+.todo-input {
+    display: flex;
+    align-items: center;
+}
+.to-do-thing {
+    width: 80%;
+    font-size: larger;
+    border-radius: 8px;
+    margin: 15px;
+}
+.note-to-do-thing {
+    font-size: larger;
+    width: 25%;
+    height: 100%;
+    background-color: #ccc;
+    border: none;
+    /* margin: 15px; */
+    border-radius: 8px;
+    cursor: pointer;
+}
+.delete-item {
+    font-size: larger;
+    width: 25%;
+    height: 100%;
+    text-align: center;
+    background-color: #ccc;
+    cursor: pointer;
+    border-radius: 8px;
+}

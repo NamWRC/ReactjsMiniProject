@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Content from "./components/content/Content";
+import SideBar from "./components/sidebar/SideBar";
+
+const projectList = [
+    {
+        projectId: 0,
+        projectName: "To Do List",
+    },
+    {
+        projectId: 1,
+        projectName: "Tic Tac Toe",
+    },
+];
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    // const [myProject, setMyProject] = useState(projectList);
+    const [project, setProject] = useState(projectList[0]);
+
+    const handleClickProject = (id) => {
+        setProject(projectList[id]);
+        console.log(project);
+    };
+    return (
+        <div className="App">
+            <div className="main-page">
+                <SideBar
+                    projectList={projectList}
+                    handleClickProject={handleClickProject}
+                ></SideBar>
+                <Content project={project}></Content>
+            </div>
+        </div>
+    );
 }
 
 export default App;
